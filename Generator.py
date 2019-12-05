@@ -5,6 +5,11 @@ generator function to use model.fit_generator
 Majority of threadsafe_iter code adopted from: 
 https://github.com/Cheng-Lin-Li/SegCaps/blob/master/utils/threadsafe.py
 @author: Deeps
+
+_________USAGE________ 
+train_gen = get_samples(sentence1_list,binary_similarity_class,32)
+train_gen = get_samples_2_inputs(sentence1_list,sentence2_list,binary_similarity_class,32)
+
 """
 import threading
 import numpy as np
@@ -59,8 +64,3 @@ def get_samples_2_inputs(x1,x2,y,batch_size,mode="train"):
         except Exception as e:
             print(e)
             break
-
-"""USAGE: 
-train_gen = get_samples(sentence1_list,,binary_similarity_class,32)
-train_gen = get_samples_2_inputs(sentence1_list,sentence2_list,binary_similarity_class,32)
-"""
